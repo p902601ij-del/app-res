@@ -1,0 +1,38 @@
+<div class="card shadow-sm border-0 p-4" style="background-color: #ffffff;">
+    <h4 class="mb-4 text-brown">Reservaciones Guardadas</h4>
+
+    <div class="table-responsive">
+        <table class="table align-middle">
+            <thead class="text-white" style="background-color: #6d2e05;">
+                <tr>
+                    <th scope="col" class="border-0 ps-3 py-3">Nombre</th>
+                    <th scope="col" class="border-0 py-3">Teléfono</th>
+                    <th scope="col" class="border-0 py-3">Fecha</th>
+                    <th scope="col" class="border-0 py-3">Hora</th>
+                    <th scope="col" class="border-0 py-3">Personas</th>
+                    <th scope="col" class="border-0 pe-3 py-3">Notas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let res of reservaciones()">
+                    <td class="ps-3 py-3">
+                        <div class="fw-bold">{{ res.Nombre_completo.split(' ')[0] }}</div>
+                        <div class="text-muted small">{{ res.Nombre_completo.split(' ').slice(1).join(' ') }}</div>
+                    </td>
+                    <td class="py-3">{{ res.Telefono }}</td>
+                    <td class="py-3">
+                        <div>{{ getDay(res.Fecha) }} {{ getMonthName(res.Fecha) }}</div>
+                        <div class="text-muted small">{{ getYear(res.Fecha) }}</div>
+                    </td>
+                    <td class="py-3">{{ res.Hora }}</td>
+                    <td class="py-3">{{ res.Numero_de_personas }}</td>
+                    <td class="pe-3 py-3">
+                        <span class="d-inline-block fst-italic text-muted small" style="max-width: 200px;">
+                            {{ res.Notas_adicionales || '-' }}
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+app-navbar a {
+  text-decoration: none !important;
+}
+
+.navbar {
+  .navbar-brand a {
+    text-decoration: none;
+  }
+
+  .navbar-brand {
+    span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .btn-outline {
+    &:hover {
+      background-color: #b45309;
+      border-radius: 0.4rem;
+    }
+  }
+}

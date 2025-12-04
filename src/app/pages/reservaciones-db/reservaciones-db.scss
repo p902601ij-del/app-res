@@ -1,0 +1,29 @@
+$brown-color: #9c4108;
+$light-gray-bg: #f3f4f6;
+
+.text-brown {
+    color: $brown-color !important;
+}
+
+.bg-light-gray {
+    background-color: $light-gray-bg !important;
+}
+
+.card {
+    border-radius: 0.5rem;
+    height: 100%;
+    min-height: 100%;
+}
+
+.table {
+    thead th {
+        font-weight: 600;
+        font-size: 0.95rem;
+    }
+
+    tbody td {
+        font-size: 0.9rem;
+        color: #444;
+        border-bottom: 1px solid #eee;
+    }
+}

@@ -1,0 +1,69 @@
+<div class="container-fluid py-4" style="background-color: #fffaf5; min-height: 100vh;">
+    <div class="text-center mb-5">
+        <h2 class="text-brown fw-bold">Sistema de Reservaciones</h2>
+        <p class="text-muted">Gestiona las reservaciones de tu restaurante</p>
+    </div>
+
+    <div class="row px-lg-5">
+        <div class="col-12 col-lg-4 mb-4">
+            <div class="card shadow-sm border-0 p-4" style="background-color: #ffffff;">
+                <h4 class="mb-4 text-brown">Nueva Reservación</h4>
+
+                <form (ngSubmit)="guardarReservacion()">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label fw-bold">Nombre completo</label>
+                        <input type="text" class="form-control bg-light-gray border-0" id="nombre"
+                            placeholder="Juan Pérez" [(ngModel)]="reservacion.Nombre_completo" name="nombre" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="telefono" class="form-label fw-bold">Teléfono</label>
+                        <input type="tel" class="form-control bg-light-gray border-0" id="telefono"
+                            placeholder="+34 600 123 456" [(ngModel)]="reservacion.Telefono" name="telefono" required>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="fecha" class="form-label fw-bold">Fecha</label>
+                            <div class="input-group">
+                                <input type="date" class="form-control bg-light-gray border-0" id="fecha"
+                                    [(ngModel)]="reservacion.Fecha" name="fecha" required>
+                                <span class="input-group-text bg-light-gray border-0"><i
+                                        class="bi bi-calendar"></i></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="hora" class="form-label fw-bold">Hora</label>
+                            <div class="input-group">
+                                <input type="time" class="form-control bg-light-gray border-0" id="hora"
+                                    [(ngModel)]="reservacion.Hora" name="hora" required>
+                                <span class="input-group-text bg-light-gray border-0"><i class="bi bi-clock"></i></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="personas" class="form-label fw-bold">Número de personas</label>
+                        <input type="number" class="form-control bg-light-gray border-0" id="personas"
+                            [(ngModel)]="reservacion.Numero_de_personas" name="personas" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="notas" class="form-label fw-bold">Notas adicionales (opcional)</label>
+                        <textarea class="form-control bg-light-gray border-0" id="notas" rows="3"
+                            placeholder="Alergias, preferencias de mesa, ocasión especial..."
+                            [(ngModel)]="reservacion.Notas_adicionales" name="notas"></textarea>
+                    </div>
+
+                    <div class="d-grid mt-4">
+                        <button type="submit" class="btn btn-brown text-white fw-bold py-2">Guardar Reservación</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-12 col-lg-8">
+            <app-reservaciones-db></app-reservaciones-db>
+        </div>
+    </div>
+</div>

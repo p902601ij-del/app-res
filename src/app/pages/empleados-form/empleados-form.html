@@ -1,0 +1,64 @@
+<div class="container-fluid py-4" style="background-color: #fffaf5; min-height: 100vh;">
+    <div class="text-center mb-5">
+        <h2 class="text-brown fw-bold">Sistema de Empleados</h2>
+        <p class="text-muted">Gestiona los empleados de tu restaurante</p>
+    </div>
+
+    <div class="row px-lg-5">
+        <div class="col-12 col-lg-4 mb-4">
+            <div class="card shadow-sm border-0 p-4" style="background-color: #ffffff;">
+                <h4 class="mb-4 text-brown">Nuevo Empleado</h4>
+
+                <form (ngSubmit)="guardarEmpleado()">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label fw-bold">Nombre</label>
+                        <input type="text" class="form-control bg-light-gray border-0" id="nombre" placeholder="María"
+                            [(ngModel)]="empleado.Nombre" name="nombre" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="apellidos" class="form-label fw-bold">Apellidos</label>
+                        <input type="text" class="form-control bg-light-gray border-0" id="apellidos"
+                            placeholder="García" [(ngModel)]="empleado.Apellidos" name="apellidos" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="telefono" class="form-label fw-bold">Teléfono</label>
+                        <input type="tel" class="form-control bg-light-gray border-0" id="telefono"
+                            placeholder="+34 600 123 456" [(ngModel)]="empleado.Telefono" name="telefono" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="horario" class="form-label fw-bold">Horario</label>
+                        <select class="form-control bg-light-gray border-0" id="horario" [(ngModel)]="empleado.Horario"
+                            name="horario" required>
+                            <option value="" disabled>Selecciona un horario</option>
+                            <option value="Mañana (8:00 - 16:00)">Mañana (8:00 - 16:00)</option>
+                            <option value="Tarde (16:00 - 00:00)">Tarde (16:00 - 00:00)</option>
+                            <option value="Noche (00:00 - 8:00)">Noche (00:00 - 8:00)</option>
+                            <option value="Tiempo completo">Tiempo completo</option>
+                            <option value="Medio tiempo">Medio tiempo</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="salario" class="form-label fw-bold">Salario mensual</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-light-gray border-0">$</span>
+                            <input type="number" class="form-control bg-light-gray border-0" id="salario"
+                                placeholder="1500" [(ngModel)]="empleado.Salario_mensual" name="salario" required>
+                        </div>
+                    </div>
+
+                    <div class="d-grid mt-4">
+                        <button type="submit" class="btn btn-brown text-white fw-bold py-2">Guardar Empleado</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="col-12 col-lg-8">
+            <app-empleados-db></app-empleados-db>
+        </div>
+    </div>
+</div>
